@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Proposal Studio ❤️</title>
@@ -15,19 +14,19 @@
 
 <body>
 
-<!-- Background -->
-
 <div class="background"></div>
 
-<!-- Builder -->
+<div class="container">
 
-<section id="builder" class="glass">
+<div id="builder">
 
 <h1>❤️ Proposal Studio</h1>
 
-<p class="tagline">
+<p class="subtitle">
 Create your own proposal website in less than a minute.
 </p>
+
+<div class="form">
 
 <input
 type="text"
@@ -41,50 +40,50 @@ placeholder="Partner's Name">
 
 <textarea
 id="loveLetter"
-placeholder="Write your love letter..."></textarea>
+placeholder="Write your love letter here..."></textarea>
 
-<label>📷 Main Photo</label>
+<label>Main Photo</label>
 
 <input
 type="file"
 id="photo1"
 accept="image/*">
 
-<label>📷 Final Photo</label>
+<label>Final Photo</label>
 
 <input
 type="file"
 id="photo2"
 accept="image/*">
 
-<button id="createBtn">
+<button id="generate">
 
 ❤️ Create My Proposal ❤️
 
 </button>
 
-</section>
+</div>
 
-<!-- Proposal -->
+</div>
 
-<section id="proposal" class="glass hidden">
+<div id="proposal" style="display:none;">
 
-<h1 id="proposalTitle"></h1>
+<h1 id="title"></h1>
 
 <p class="subtitle">
 
-Every love story is beautiful,
+Every love story is beautiful,<br>
 but I hope ours becomes my favorite.
 
 </p>
 
 <img
-id="previewPhoto"
+id="mainPhoto"
 class="photo">
 
 <p
-id="previewLetter"
-class="letter">
+id="message"
+class="message">
 </p>
 
 <h2>
@@ -97,19 +96,21 @@ Will You Be Mine Forever? 💍
 
 <button id="yes">
 
-YES ❤️
+Yes ❤️
 
 </button>
 
 <button id="no">
 
-NO 😅
+No 😅
 
 </button>
 
 </div>
 
-</section>
+</div>
+
+</div>
 
 <script src="script.js"></script>
 
