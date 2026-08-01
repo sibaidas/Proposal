@@ -1,62 +1,108 @@
-const yesBtn = document.getElementById("yes");
-const noBtn = document.getElementById("no");
+const builder = document.getElementById("builder");
+const proposal = document.getElementById("proposal");
 
-noBtn.addEventListener("mouseover", () => {
-    const x = Math.random() * (window.innerWidth - 120);
-    const y = Math.random() * (window.innerHeight - 80);
+const generate = document.getElementById("generate");
 
-    noBtn.style.position = "absolute";
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
+const yourName = document.getElementById("yourName");
+const partnerName = document.getElementById("partnerName");
+const loveLetter = document.getElementById("loveLetter");
+
+const photo1 = document.getElementById("photo1");
+const photo2 = document.getElementById("photo2");
+
+const title = document.getElementById("title");
+const letter = document.getElementById("letter");
+const mainPhoto = document.getElementById("mainPhoto");
+
+let secondPhoto = "";
+
+generate.addEventListener("click", () => {
+
+    if(
+        yourName.value.trim()==="" ||
+        partnerName.value.trim()==="" ||
+        loveLetter.value.trim()==="" ||
+        photo1.files.length===0 ||
+        photo2.files.length===0
+    ){
+        alert("Please fill all fields.");
+        return;
+    }
+
+    title.innerHTML = "Dear " + partnerName.value + " ❤️";
+
+    letter.innerHTML = loveLetter.value.replace(/\n/g,"<br>");
+
+    const reader1 = new FileReader();
+    reader1.onload = function(e){
+        mainPhoto.src = e.target.result;
+    }
+    reader1.readAsDataURL(photo1.files[0]);
+
+    const reader2 = new FileReader();
+    reader2.onload = function(e){
+        secondPhoto = e.target.result;
+    }
+    reader2.readAsDataURL(photo2.files[0]);
+
+    builder.style.display="none";
+    proposal.style.display="block";
+
+    setTimeout(setButtons,200);
 });
 
-yesBtn.addEventListener("click", () => {
+function setButtons(){
 
-document.body.innerHTML = `
+    const yesBtn=document.getElementById("yes");
+    const noBtn=document.getElementById("no");
+
+    noBtn.addEventListener("mouseover",()=>{
+
+        const x=Math.random()*(window.innerWidth-120);
+        const y=Math.random()*(window.innerHeight-70);
+
+        noBtn.style.position="fixed";
+        noBtn.style.left=x+"px";
+        noBtn.style.top=y+"px";
+
+    });
+
+    yesBtn.addEventListener("click",()=>{
+
+        document.body.innerHTML=`
 
 <style>
 
 body{
 margin:0;
-padding:0;
-font-family:Arial,sans-serif;
 display:flex;
 justify-content:center;
 align-items:center;
 min-height:100vh;
-background:linear-gradient(135deg,#ff4b7d,#ff85a2);
-overflow:hidden;
-}
-
-.letter{
-max-width:750px;
-margin:20px;
-padding:35px;
-background:rgba(255,255,255,.18);
-backdrop-filter:blur(15px);
-border-radius:25px;
+background:linear-gradient(135deg,#ff4b7d,#7b2cbf);
+font-family:Arial,sans-serif;
+padding:20px;
 color:white;
-text-align:center;
-box-shadow:0 0 25px rgba(255,255,255,.3);
-animation:fade 1.5s ease;
 }
 
-.photo{
-width:180px;
-height:180px;
+.card{
+max-width:700px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(15px);
+padding:35px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+animation:fade 1s;
+}
+
+img{
+width:200px;
+height:200px;
 border-radius:50%;
 object-fit:cover;
 border:5px solid white;
 margin-bottom:20px;
-}
-
-h1{
-font-size:40px;
-}
-
-p{
-font-size:20px;
-line-height:1.9;
 }
 
 @keyframes fade{
@@ -72,66 +118,23 @@ transform:translateY(0);
 
 </style>
 
-<div class="letter">
+<div class="card">
 
-<img src="photo2.jpg" class="photo">
+<img src="${secondPhoto}">
 
 <h1>❤️ She Said YES ❤️</h1>
 
-<p>
+<h2>${partnerName.value}</h2>
 
-<b>My Dearest Soniya,</b>
+<p style="font-size:20px;line-height:1.8;">
 
-<br><br>
-
-Today will always remain one of the most beautiful days of my life.
-
-Your "Yes" is not just an answer—
-it is a beautiful beginning to a journey I hope we will walk together.
-
-<br><br>
+Today marks the beginning of a beautiful journey.
 
 Thank you for trusting me with your heart.
 
-I may not be perfect,
-and I cannot promise that life will always be easy,
-but I promise to always respect you,
+I promise to always respect you,
 support your dreams,
-listen to you,
-and stand beside you through happiness and challenges alike.
+stand beside you,
+and cherish every moment we create together.
 
-<br><br>
-
-I want to celebrate your victories,
-wipe away your tears,
-laugh with you,
-grow with you,
-and create countless beautiful memories together.
-
-<br><br>
-
-Every sunrise will remind me how lucky I am,
-because somewhere in this world,
-there is a wonderful person named <b>Soniya Nath</b>,
-who chose me.
-
-<br><br>
-
-Thank you for saying <b>YES</b>.
-
-This is not the end of a proposal...
-
-<b>It is the beginning of our beautiful story. ❤️</b>
-
-</p>
-
-<h2 style="margin-top:30px;">
-Forever Yours,<br>
-❤️ Sibai ❤️
-</h2>
-
-</div>
-
-`;
-
-});
+May our story be filled with laughter,
