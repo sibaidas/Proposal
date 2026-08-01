@@ -3,45 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Soniya ❤️</title>
+<title>Proposal Studio ❤️</title>
 
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<div id="builder" class="container">
+
+<h1>❤️ Proposal Studio</h1>
+
+<p>Create your own proposal website in seconds.</p>
+
+<input type="text" id="yourName" placeholder="Your Name">
+
+<input type="text" id="partnerName" placeholder="Partner's Name">
+
+<textarea id="loveLetter" placeholder="Write your love letter..."></textarea>
+
+<label>Main Photo</label>
+<input type="file" id="photo1" accept="image/*">
+
+<label>Second Photo</label>
+<input type="file" id="photo2" accept="image/*">
+
+<button id="generate">
+Create My Proposal ❤️
+</button>
+
+</div>
+
+<div id="proposal" style="display:none;">
+
 <div class="container">
 
-<h1>Dear Soniya Nath ❤️</h1>
+<h1 id="title"></h1>
 
 <p class="subtitle">
 Every love story is beautiful,<br>
 but I hope ours becomes my favorite.
 </p>
 
-<img src="photo1.jpg" class="photo" alt="Our Photo">
+<img id="mainPhoto" class="photo">
 
-<p class="quote">
-"You came into my life like a beautiful surprise.<br>
-Every moment with you feels special.<br>
-I don't know what tomorrow brings,<br>
-but I know I want you beside me."
-</p>
-
-<p>
-<b>Soniya,</b><br><br>
-
-Thank you for being the reason behind so many smiles.<br>
-No matter where life takes us,<br>
-my heart will always choose you forever ❤️
-</p>
+<p id="letter" class="quote"></p>
 
 <h2>Will You Be Mine Forever? 💍</h2>
 
 <button id="yes">Yes ❤️</button>
+
 <button id="no">No 😅</button>
 
-<div id="message"></div>
+</div>
 
 </div>
 
