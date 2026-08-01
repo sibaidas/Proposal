@@ -1,65 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Proposal Studio ❤️</title>
 
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<div id="builder" class="container">
+<!-- Background -->
+
+<div class="background"></div>
+
+<!-- Builder -->
+
+<section id="builder" class="glass">
 
 <h1>❤️ Proposal Studio</h1>
 
-<p>Create your own proposal website in seconds.</p>
+<p class="tagline">
+Create your own proposal website in less than a minute.
+</p>
 
-<input type="text" id="yourName" placeholder="Your Name">
+<input
+type="text"
+id="yourName"
+placeholder="Your Name">
 
-<input type="text" id="partnerName" placeholder="Partner's Name">
+<input
+type="text"
+id="partnerName"
+placeholder="Partner's Name">
 
-<textarea id="loveLetter" placeholder="Write your love letter..."></textarea>
+<textarea
+id="loveLetter"
+placeholder="Write your love letter..."></textarea>
 
-<label>Main Photo</label>
-<input type="file" id="photo1" accept="image/*">
+<label>📷 Main Photo</label>
 
-<label>Second Photo</label>
-<input type="file" id="photo2" accept="image/*">
+<input
+type="file"
+id="photo1"
+accept="image/*">
 
-<button id="generate">
-Create My Proposal ❤️
+<label>📷 Final Photo</label>
+
+<input
+type="file"
+id="photo2"
+accept="image/*">
+
+<button id="createBtn">
+
+❤️ Create My Proposal ❤️
+
+</button>
+
+</section>
+
+<!-- Proposal -->
+
+<section id="proposal" class="glass hidden">
+
+<h1 id="proposalTitle"></h1>
+
+<p class="subtitle">
+
+Every love story is beautiful,
+but I hope ours becomes my favorite.
+
+</p>
+
+<img
+id="previewPhoto"
+class="photo">
+
+<p
+id="previewLetter"
+class="letter">
+</p>
+
+<h2>
+
+Will You Be Mine Forever? 💍
+
+</h2>
+
+<div class="buttons">
+
+<button id="yes">
+
+YES ❤️
+
+</button>
+
+<button id="no">
+
+NO 😅
+
 </button>
 
 </div>
 
-<div id="proposal" style="display:none;">
-
-<div class="container">
-
-<h1 id="title"></h1>
-
-<p class="subtitle">
-Every love story is beautiful,<br>
-but I hope ours becomes my favorite.
-</p>
-
-<img id="mainPhoto" class="photo">
-
-<p id="letter" class="quote"></p>
-
-<h2>Will You Be Mine Forever? 💍</h2>
-
-<button id="yes">Yes ❤️</button>
-
-<button id="no">No 😅</button>
-
-</div>
-
-</div>
+</section>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
